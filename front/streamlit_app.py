@@ -10,7 +10,7 @@ input = st.text_input('Ну попробуй сюда написать отзы�
 click = st.button('Аналазируй, падла')
 if click:
     text = {'text' : input}
-    res = requests.post('http://127.0.0.1:8000/clf_text', json=text)
+    res = requests.post('http://api:8000/clf_text', json=text)
     cls = res.json()['label']
     if cls == 'positive':
         cls = 'вообще добренький такой'
